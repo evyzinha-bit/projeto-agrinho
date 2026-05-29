@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(208, 255, 241);
+    /* 👇 Isso vai centralizar todo o texto e elementos inline do seu site */
+    text-align: center; 
+}
+
+/* Caso você tenha um título h1 (como "Efeito Poupa-Terra") */
+h1 {
+    text-align: center;
+    padding: 20px;
+}
+
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(208, 255, 241);
+    text-align: center; /* Alinha o texto do parágrafo no centro */
+    
+    /* Para o fundo verde não ocupar a tela inteira e ficar colado nas bordas: */
+    max-width: 1000px;     /* Limita a largura máxima do texto */
+    margin: 20px auto;    /* O 'auto' aqui centraliza o BLOCO do parágrafo na tela */
+    padding: 15px;        /* Dá um espaço interno para o texto não colar na bordas verdes */
+}
+
+.cartao {
+    width: 800%;
+    max-width: 900px;
+    height: auto;
+    display: block;
+    margin: 20px auto; /* Isso centraliza a imagem/cartão na tela */
+}
+/* Estilização do botão de dúvida */
+.botao-duvida {
+    display: block;
+    max-width: 400px;      /* Define a largura do botão */
+    margin: 30px auto;     /* Centraliza o botão na tela */
+    background-color: rgb(1, 211, 158); /* Cor verde igual aos seus parágrafos */
+    border-radius: 8px;    /* Deixa as bordas arredondadas */
+    overflow: hidden;      /* Garante que o conteúdo respeite as bordas arredondadas */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Dá um efeito leve de sombra */
+}
+
+/* Estilo do texto do botão que fica visível */
+.botao-duvida summary {
+    padding: 15px;
+    font-weight: bold;
+    color: white;          /* Cor do texto do botão */
+    list-style: none;      /* Remove a setinha padrão do navegador (opcional) */
+}
+
+/* Estilo do conteúdo quando o botão for aberto */
+.conteudo-duvida {
+    background-color: #ffffff; /* Fundo branco para destacar a explicação */
+    padding: 20px;
+    color: #333333;
+}
+
+.conteudo-duvida h2 {
+    margin-bottom: 10px;
+    color: rgb(1, 211, 158);
+}
+
+.conteudo-duvida p {
+    background-color: transparent !important; /* Remove o fundo verde original do parágrafo aqui dentro */
+    color: #333333 !important;
+    margin: 0;
+    padding: 0;
+}
+footer {
+    background-color: #01d39e; /* O mesmo verde que você usou */
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px; /* Dá um espaço entre a imagem e o rodapé */
+    font-family: 'Georgia', Times, serif;
+    font-size: 14px;
+}
+/* Melhora para todos os parágrafos de texto corrido */
+p {
+    max-width: 800px;
+    margin: 20px auto;
+    line-height: 1.6; /* Aumenta o espaço entre as linhas, melhorando a leitura */
+    color: #333333;   /* Um cinza escuro é mais confortável para ler do que o preto puro */
+}
+.titulo-secao {
+    margin-top: 40px;
+    color: #01d39e;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Faz os cards irem para baixo em telas de celular */
+    margin: 20px auto;
+    max-width: 900px;
+}
+
+.card-tecnologia {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.card-tecnologia h3 {
+    color: #01d39e;
+    margin-bottom: 10px;
+}
+.botao-duvida:hover {
+    background-color: #01b88a; /* Um verde um pouco mais escuro */
+    transform: translateY(-2px); /* Levanta o botão de leve */
+    transition: all 0.3s ease;  /* Deixa o efeito suave */
+}
+/* Estilo para o título da nova seção */
+.titulo-secao {
+    text-align: center;
+    color: #01d39e;
+    margin-top: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Espaçamento entre os botões de tecnologia */
+.container-tecnologias .botao-duvida {
+    margin-bottom: 10px; /* Cria um pequeno espaço entre um botão e outro */
+}
+
+/* Deixa o texto do parágrafo dentro desses botões bem organizado */
+.conteudo-duvida p {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: left; /* O texto explicativo fica melhor alinhado à esquerda */
+}
+.menu-topo {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.logo-menu {
+    font-weight: bold;
+    color: #01d39e;
+}
+
+.links-menu a {
+    color: #333333;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+.links-menu a:hover {
+    color: #01d39e;
+}
+.bloco-destaque {
+    background-color: rgba(1, 211, 158, 0.1); /* Um verde bem clarinho de fundo */
+    border-left: 5px solid #01d39e; /* Barrinha verde na esquerda */
+    padding: 20px;
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: left;
+    border-radius: 4px;
+}
+
+.bloco-destaque h3 {
+    color: #01b88a;
+    margin-bottom: 8px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth; /* 👇 Adicione esta linha aqui! */
+}
+.painel-numeros {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 30px auto;
+    max-width: 800px;
+}
+
+.caixa-numero {
+    background-color: #ffffff;
+    border-top: 4px solid #01d39e; /* Barrinha verde no topo da caixinha */
+    padding: 20px;
+    border-radius: 8px;
+    min-width: 200px;
+    flex: 1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.caixa-numero h4 {
+    color: #01b88a;
+    font-size: 24px;
+    margin-bottom: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.caixa-numero p {
+    font-size: 14px;
+    color: #666666;
+    margin: 0;
+}
