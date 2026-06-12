@@ -1,104 +1,215 @@
+/* ==========================================
+   1. CONFIGURAÇÕES GERAIS E RESET
+   ========================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: rgb(208, 255, 241);
-    /* 👇 Isso vai centralizar todo o texto e elementos inline do seu site */
+    background-color: rgb(180, 240, 220);
     text-align: center; 
+    background-image: url(https://tributanaotributa.com.br/wp-content/uploads/2025/08/tnt-agro_plano-de-fundo.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-blend-mode: multiply;
 }
 
-/* Caso você tenha um título h1 (como "Efeito Poupa-Terra") */
+/* Títulos Principais */
 h1 {
-    text-align: center;
-    padding: 20px;
-}
-
-p {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: rgb(208, 255, 241);
-    text-align: center; /* Alinha o texto do parágrafo no centro */
-    
-    /* Para o fundo verde não ocupar a tela inteira e ficar colado nas bordas: */
-    max-width: 1000px;     /* Limita a largura máxima do texto */
-    margin: 20px auto;    /* O 'auto' aqui centraliza o BLOCO do parágrafo na tela */
-    padding: 15px;        /* Dá um espaço interno para o texto não colar na bordas verdes */
-}
-
-.cartao {
-    width: 800%;
-    max-width: 900px;
-    height: auto;
-    display: block;
-    margin: 20px auto; /* Isso centraliza a imagem/cartão na tela */
-}
-/* Estilização do botão de dúvida */
-.botao-duvida {
-    display: block;
-    max-width: 400px;      /* Define a largura do botão */
-    margin: 30px auto;     /* Centraliza o botão na tela */
-    background-color: rgb(1, 211, 158); /* Cor verde igual aos seus parágrafos */
-    border-radius: 8px;    /* Deixa as bordas arredondadas */
-    overflow: hidden;      /* Garante que o conteúdo respeite as bordas arredondadas */
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Dá um efeito leve de sombra */
-}
-
-/* Estilo do texto do botão que fica visível */
-.botao-duvida summary {
-    padding: 15px;
     font-weight: bold;
-    color: white;          /* Cor do texto do botão */
-    list-style: none;      /* Remove a setinha padrão do navegador (opcional) */
-}
-
-/* Estilo do conteúdo quando o botão for aberto */
-.conteudo-duvida {
-    background-color: #ffffff; /* Fundo branco para destacar a explicação */
-    padding: 20px;
-    color: #333333;
-}
-
-.conteudo-duvida h2 {
-    margin-bottom: 10px;
-    color: rgb(1, 211, 158);
-}
-
-.conteudo-duvida p {
-    background-color: transparent !important; /* Remove o fundo verde original do parágrafo aqui dentro */
-    color: #333333 !important;
-    margin: 0;
-    padding: 0;
-}
-footer {
-    background-color: #01d39e; /* O mesmo verde que você usou */
-    color: white;
+    color: rgb(0, 75, 56);
     text-align: center;
-    padding: 15px;
-    margin-top: 40px; /* Dá um espaço entre a imagem e o rodapé */
-    font-family: 'Georgia', Times, serif;
-    font-size: 14px;
+    padding: 20px;
+    background-color: rgba(0, 255, 191, 0.8);
+    margin-bottom: 8px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-/* Melhora para todos os parágrafos de texto corrido */
+
+h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #00634a;
+    background-color: rgb(2, 82, 75);
+    margin-top: 40px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 20px double #00a57c;
+}
+
+/* Parágrafos Padrão (Texto Corrido) */
 p {
     max-width: 800px;
     margin: 20px auto;
-    line-height: 1.6; /* Aumenta o espaço entre as linhas, melhorando a leitura */
-    color: #333333;   /* Um cinza escuro é mais confortável para ler do que o preto puro */
+    line-height: 1.6;
+    color: #000000;
+    background-color: rgba(255, 255, 255, 0.65);
+    padding: 15px;
+    border-radius: 8px;
 }
-.titulo-secao {
-    margin-top: 40px;
+
+/* Imagem / Cartão Principal */
+.cartao {
+    width: 100%; /* Corrigido de 800% para 100% para evitar quebra de tela */
+    max-width: 900px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+/* ==========================================
+   2. NOVO: ESTILO DOS BOTÕES PRÓXIMOS (FRASES)
+   ========================================== */
+.container-botoes-frases {
+    display: flex;
+    justify-content: center; /* Centraliza os botões na tela */
+    gap: 12px;               /* Deixa as frases bem perto uma da outra */
+    flex-wrap: wrap;         /* Permite quebrar linha em celulares */
+    margin: 25px auto;
+    max-width: 900px;
+    padding: 0 15px;
+}
+
+.botao-frase {
+    display: inline-block;
+    background-color: #01d39e;
+    color: #ffffff !important;
+    padding: 12px 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px; /* Estilo pílula/botão arredondado */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: none;
+    background-color: rgb(1, 211, 183); /* Garante cor sólida sem transparência */
+}
+
+.botao-frase:hover {
+    background-color: #01b88a;
+    transform: translateY(-2px); /* Efeito sutil de flutuar ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Remove estilos de parágrafo caso decida usar a tag <p class="botao-frase"> */
+p.botao-frase {
+    max-width: fit-content;
+    margin: 0;
+}
+
+/* ==========================================
+   3. MENU SUPERIOR
+   ========================================== */
+.menu-topo {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    box-shadow: 0 2px 4px rgb(21, 241, 175);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.logo-menu {
+    font-weight: bold;
     color: #01d39e;
 }
 
+.links-menu a {
+    color: #5affa4;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+.links-menu a:hover {
+    color: #01d39e;
+}
+
+/* ==========================================
+   4. COMPONENTES E SEÇÕES DE CONTEÚDO
+   ========================================== */
+.titulo-secao {
+    text-align: center;
+    color: #01d39e;
+    margin-top: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.bloco-destaque {
+    background-color: rgba(7, 247, 187, 0.884);
+    border-left: 5px solid #01d39e;
+    padding: 20px;
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: left;
+    border-radius: 4px;
+}
+
+.bloco-destaque h3 {
+    color: #00533d;
+    margin-bottom: 8px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Botão de Dúvida / Accordion */
+.botao-duvida {
+    display: block;
+    max-width: 400px;
+    margin: 30px auto;
+    background-color: rgb(1, 211, 158);
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.botao-duvida:hover {
+    background-color: #01b88a;
+    transform: translateY(-2px);
+}
+
+.botao-duvida summary {
+    padding: 15px;
+    font-weight: bold;
+    color: white;
+    list-style: none;
+}
+
+.conteudo-duvida {
+    background-color: #ffffff;
+    padding: 20px;
+    color: #000000;
+}
+
+.conteudo-duvida p {
+    background-color: transparent;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.container-tecnologias .botao-duvida {
+    margin-bottom: 10px;
+}
+
+/* ==========================================
+   5. LAYOUTS EM GRID / FLEX (CARDS E PAINÉIS)
+   ========================================== */
 .cards-container {
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap; /* Faz os cards irem para baixo em telas de celular */
+    flex-wrap: wrap;
     margin: 20px auto;
     max-width: 900px;
 }
@@ -109,95 +220,38 @@ p {
     border-radius: 8px;
     padding: 20px;
     width: 250px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .card-tecnologia h3 {
     color: #01d39e;
     margin-bottom: 10px;
 }
-.botao-duvida:hover {
-    background-color: #01b88a; /* Um verde um pouco mais escuro */
-    transform: translateY(-2px); /* Levanta o botão de leve */
-    transition: all 0.3s ease;  /* Deixa o efeito suave */
-}
-/* Estilo para o título da nova seção */
-.titulo-secao {
-    text-align: center;
-    color: #01d39e;
-    margin-top: 50px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
 
-/* Espaçamento entre os botões de tecnologia */
-.container-tecnologias .botao-duvida {
-    margin-bottom: 10px; /* Cria um pequeno espaço entre um botão e outro */
-}
-
-/* Deixa o texto do parágrafo dentro desses botões bem organizado */
-.conteudo-duvida p {
-    font-size: 16px;
-    line-height: 1.5;
-    text-align: left; /* O texto explicativo fica melhor alinhado à esquerda */
-}
-.menu-topo {
-    background-color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.logo-menu {
-    font-weight: bold;
-    color: #01d39e;
-}
-
-.links-menu a {
-    color: #333333;
-    text-decoration: none;
-    margin-left: 20px;
+.card-tecnologia p {
     font-size: 14px;
-}
-
-.links-menu a:hover {
-    color: #01d39e;
-}
-.bloco-destaque {
-    background-color: rgba(1, 211, 158, 0.1); /* Um verde bem clarinho de fundo */
-    border-left: 5px solid #01d39e; /* Barrinha verde na esquerda */
-    padding: 20px;
-    max-width: 800px;
-    margin: 40px auto;
-    text-align: left;
-    border-radius: 4px;
-}
-
-.bloco-destaque h3 {
-    color: #01b88a;
-    margin-bottom: 8px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-* {
+    line-height: 1.4;
+    color: #555555;
+    text-align: center;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth; /* 👇 Adicione esta linha aqui! */
+    background-color: transparent;
 }
+
+/* Painel de Números */
 .painel-numeros {
     display: flex;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
-    margin: 30px auto;
-    max-width: 800px;
+    margin: 40px auto;
+    max-width: 900px;
+    padding: 0 20px;
 }
 
 .caixa-numero {
     background-color: #ffffff;
-    border-top: 4px solid #01d39e; /* Barrinha verde no topo da caixinha */
+    border-top: 4px solid #01d39e;
     padding: 20px;
     border-radius: 8px;
     min-width: 200px;
@@ -207,13 +261,132 @@ p {
 
 .caixa-numero h4 {
     color: #01b88a;
-    font-size: 24px;
+    font-size: 28px;
+    font-weight: bold;
     margin-bottom: 5px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .caixa-numero p {
-    font-size: 14px;
+    font-size: 13px;
     color: #666666;
+    text-align: center;
     margin: 0;
+    padding: 0;
+    background-color: transparent;
+}
+
+/* ==========================================
+   6. RODAPÉ (FOOTER)
+   ========================================== */
+footer {
+    background-color: #01d39e;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+    font-family: 'Georgia', Times, serif;
+    font-size: 14px;
+}
+
+.rodape-bonito {
+    background-color: #01a37a;
+    color: #ffffff;
+    padding: 40px 20px 20px 20px;
+    margin-top: 60px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: left;
+}
+
+.rodape-conteudo {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
+    gap: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.rodape-secao {
+    flex: 1;
+    min-width: 250px;
+}
+
+.rodape-logo {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.rodape-frase {
+    font-size: 14px;
+    color: #e0fdf5;
+    background-color: transparent; 
+    line-height: 1.5;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+
+.rodape-secao h4 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.rodape-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.rodape-links li {
+    margin-bottom: 10px;
+}
+
+.rodape-links a {
+    color: #e0fdf5;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.rodape-links a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.rodape-inferior {
+    max-width: 900px;
+    margin: 20px auto 0 auto;
+    text-align: center;
+}
+
+.rodape-inferior p {
+    background-color: transparent; 
+    color: #bbf7e3;
+    font-size: 13px;
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.rodape-inferior strong {
+    color: #ffffff;
+}
+
+/* RESPONSIVIDADE (CELULARES) */
+@media (max-width: 600px) {
+    .rodape-conteudo {
+        flex-direction: column;
+        text-align: center;
+    }
+    .rodape-frase {
+        text-align: center;
+    }
 }
